@@ -1,0 +1,45 @@
+{
+    "work_dir": "./experiments/mnist",
+    "dataloader": {
+        "batch_size": 64,
+        "dataset": "MNIST",
+        "num_sel_train_images": -1,
+        "num_sel_test_images": -1,
+        "path_to_data": "./data",
+        "split": "train",
+        "num_workers": 4,
+        "num_classes": 10,
+        "train_val_split": 0.9
+    },
+    "loss": {
+        "type": "XENT"
+    },
+    "optimiser": {
+        "type": "ADAM",
+        "lr": 0.01,
+        "scheduler_type": "MULTI",
+        "scheduler_lr_step": [
+            0.9,
+            0.95
+        ],
+        "scheduler_lr_factor": 0.1
+    },
+    "training": {
+        "use_cuda": true,
+        "activation": "relu",
+        "use_batchnorm": true,
+        "dropout": 0.3,
+        "log_interval": 100,
+        "eval_interval": 2,
+        "epochs": 15,
+        "val_metrics": [
+            "Accuracy",
+            "F1",
+            "Precision",
+            "Recall",
+            "Specificity"
+        ],
+        "run_test_epoch": true
+    },
+    "model": "mnistmlp"
+}
