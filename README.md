@@ -3,12 +3,14 @@
 This repository provides simplest framework for designing classification neural networks
 It serves as a starting point for more complex projects, where more models and loss functions could be added
 
+If you are interested in using such framework to address regression problems then check out: [http://github.com/masadcv/SimplestDeepLearningRegressor.git](http://github.com/masadcv/SimplestDeepLearningRegressor.git)
+
 ## Setup
 To setup, simply clone this repository and install dependencies:
 
 ```
-$ git clone http://github.com/masadcv/simplestdeeplearningframework.git
-$ cd simplestdeeplearningframework
+$ git clone http://github.com/masadcv/SimplestDeepLearningClassifier.git
+$ cd SimplestDeepLearningClassifier
 $ pip3 install -r requirements.txt
 ```
 
@@ -16,7 +18,7 @@ $ pip3 install -r requirements.txt
 To train a network, provide a config following format provided in `./configs` folder or use an existing config with training script:
 
 ```
-$ python3 training.py --model mymodel --config configs/myconfig.json
+$ python3 training.py --model mnistmlp --config configs/config.json
 ```
 
 ## Evaluation
@@ -37,7 +39,7 @@ $ tensorboard --logdir /path/to/training/folder --port 6006
 
 Following this, tensorboard session will be accessible in browser at: localhost:6006
 
-# Batched Training/Evaluation Scripts
+## Batched Training/Evaluation Scripts
 To train all supported models configurations, run batched training script as:
 ```
 $ source scripts/train_all.sh

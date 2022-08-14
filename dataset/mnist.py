@@ -3,12 +3,6 @@ This file is based on: https://github.com/pytorch/vision/blob/main/torchvision/d
 
 It copies the basic functionality of downloading, reading and preparing data from above file.
 
-The following changes have been made to enable SUM and DIFF data generation and for general improvements in prototyping/testing:
-- Added support for creating and using a validation set from training set
-- Added op_symbols input and relevant functions for getting data with a given math op (current support +/-)
-- Added functions for calculating occurance based weights for each given target
-- Added functionality to randomly select two digits and generate target with a randomly selected op
-- Added small subset selection to enable fast prototyping of new models/ideas
 """
 
 import collections

@@ -13,9 +13,7 @@ import utils
 
 def parse_args():
     parser = argparse.ArgumentParser("Neural Network Trainer")
-    parser.add_argument(
-        "--model", type=str, default="mnistmlp", help="model to learn"
-    )
+    parser.add_argument("--model", type=str, default="mnistmlp", help="model to learn")
     parser.add_argument(
         "--config",
         type=str,
@@ -86,19 +84,13 @@ def main():
 
     # setup loss
     loss_config = exp_config["loss"]
-    loss_func = core.loss.get_loss(
-        loss_config["type"], reduction="mean"
-    )
+    loss_func = core.loss.get_loss(loss_config["type"], reduction="mean")
 
     # create the tensorboard folder from date/time to log training params
     current_date = datetime.datetime.now().strftime("%Y_%m_%d_%H-%M")
     tensorboard_folder = os.path.join(
         work_dir,
-        current_date
-        + "{}_{}".format(
-            loss_config["type"],
-            optim_config["type"]
-        ),
+        current_date + "{}_{}".format(loss_config["type"], optim_config["type"]),
     )
     tb_writer = SummaryWriter(log_dir=tensorboard_folder)
 

@@ -1,4 +1,3 @@
-
 import torch
 import torch.nn as nn
 
@@ -10,7 +9,7 @@ class MNistMLP(nn.Module):
     def __init__(
         self,
         in_channels=28 * 28,  # 1 image with 28x28
-        num_classes=10,  # 10 classes 
+        num_classes=10,  # 10 classes
         mlp_layers=[32, 64],
         head_layers=[128],
         use_bn=True,
@@ -162,10 +161,11 @@ class MNistCNN(nn.Module):
         # flatten
         xf = torch.flatten(xf, start_dim=1)
 
-        # apply head to get output of op
+        # apply head to get output
         xout = self.head(xf)
 
         return xout
+
 
 if __name__ == "__main__":
     print(MNistMLP())

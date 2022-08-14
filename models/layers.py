@@ -9,6 +9,7 @@ def get_activation_from_name(name):
     }
     return name_to_act_funct[name]
 
+
 def init_weights(m):
     if isinstance(m, nn.Conv2d):
         nn.init.kaiming_normal_(m.weight, mode="fan_out", nonlinearity="relu")
@@ -24,6 +25,7 @@ def init_weights(m):
     elif isinstance(m, nn.BatchNorm2d):
         nn.init.constant_(m.weight, 1)
         nn.init.constant_(m.bias, 0)
+
 
 class Conv2dBNAct(nn.Sequential):
     def __init__(

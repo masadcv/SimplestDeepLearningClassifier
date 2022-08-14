@@ -51,7 +51,7 @@ def main():
         num_workers=dataloader_config["num_workers"],
         train_val_split=dataloader_config["train_val_split"],
         num_sel_train_images=dataloader_config["num_sel_train_images"],
-        num_sel_test_images=dataloader_config["num_sel_test_images"]
+        num_sel_test_images=dataloader_config["num_sel_test_images"],
     )
 
     model_to_func = models.model_zoo.modelname_to_func

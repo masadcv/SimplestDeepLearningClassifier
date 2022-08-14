@@ -165,12 +165,14 @@ def make_confusion_matrix_plot(
     plt.ticklabel_format(useOffset=False)
 
     sns.set(font_scale=2.5)  # for label size
-    sns.heatmap(df_cm, annot=annot, annot_kws={"size": 24}, fmt="g", vmin=0, vmax=100)  # font size
-    fontsize=24
+    sns.heatmap(
+        df_cm, annot=annot, annot_kws={"size": 24}, fmt="g", vmin=0, vmax=100
+    )  # font size
+    fontsize = 24
     plt.xticks(fontsize=fontsize, rotation=45)
     plt.yticks(fontsize=fontsize, rotation=45)
-    plt.xlabel("Pred", fontsize=fontsize+10, rotation=45)
-    plt.ylabel("GT", fontsize=fontsize+10, rotation=45)
+    plt.xlabel("Pred", fontsize=fontsize + 10, rotation=45)
+    plt.ylabel("GT", fontsize=fontsize + 10, rotation=45)
     plt.tight_layout()
 
     if save_path:
